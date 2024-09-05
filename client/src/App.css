@@ -13,3 +13,9 @@ html,body,#root{
 body{
     background-color: rgb(211, 211, 211);
 }
+
+.card{
+    /* display: grid; */
+    /* grid-template-columns: auto auto; */
+    /* height: 30%; */
+}
