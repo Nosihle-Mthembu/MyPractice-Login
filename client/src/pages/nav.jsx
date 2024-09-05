@@ -17,7 +17,7 @@ const  Navigate = () => {
           <li>
             <Link to="/registration" style={{textDecoration:"none",  fontSize:"120%",}}>Sign Up</Link>
           </li>
-        <span style={{float:"right", marginRight:"50%", backgroundImage:`url(${require("../Assets/logow-removebg-preview.png")})`, backgroundRepeat:"no-repeat",backgroundSize:"cover", width:50, height:50}}></span>
+        <span style={{float:"left", marginRight:"50%", backgroundImage:`url(${require("../Assets/logow-removebg-preview.png")})`, backgroundRepeat:"no-repeat",backgroundSize:"cover", width:50, height:50}}></span>
         </ul>
       </nav>
     </>
