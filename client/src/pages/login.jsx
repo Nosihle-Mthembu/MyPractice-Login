@@ -1,4 +1,3 @@
-// src/pages/Login.js
 import React, { useState } from 'react';
 
 function Login({ onLogin }) {
@@ -8,9 +7,8 @@ function Login({ onLogin }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // For demonstration purposes, let's assume there are default credentials
     if (username === 'user' && password === 'password') {
-      onLogin(true); // Call the onLogin prop with true to indicate a successful login
+      onLogin(true);
     } else {
       setError('Invalid username or password');
     }

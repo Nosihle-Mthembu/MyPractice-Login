@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  
 }
 
 html,body,#root{
@@ -14,8 +13,59 @@ body{
     background-color: rgb(211, 211, 211);
 }
 
-.card{
-    /* display: grid; */
-    /* grid-template-columns: auto auto; */
-    /* height: 30%; */
-}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+  html,body,#root{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .HomeFontColor{
+    color:rgb(61, 37, 121);
+    font-size: 130%;
+  }
+  
+  .FontNameList{
+    color: rgb(146, 129, 235);
+  }
+  
+  nav{
+    /* justify-content: space-around; */
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  
+  Link{
+    color:rgb(61, 37, 121);
+  }
+  
+  .footer{
+    
+  }
