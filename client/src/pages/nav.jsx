@@ -6,7 +6,7 @@ const  Navigate = () => {
 
   return (
     <>
-      <nav style={{margin: 0,padding: 0,}}>
+      <nav style={{margin: 0,padding: 0}}>
         <ul>
           <li>
             <Link to="/" style={{textDecoration:"none",  fontSize:"120%"}}>Home</Link>

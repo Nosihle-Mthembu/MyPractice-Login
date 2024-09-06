@@ -9,9 +9,9 @@ html,body,#root{
     height: 100%;
 }
 
-body{
+/* body{
     background-color: rgb(211, 211, 211);
-}
+} */
 
 *{
     margin: 0;
@@ -25,25 +25,38 @@ body{
   }
   
   .HomeFontColor{
-    color:rgb(61, 37, 121);
+    font-size: 130%;
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+  }
+  
+  .HomeFontColor:hover{
+    color: white;
+  }
+
+  .AboutFontColor{
+    color: rgb(146, 129, 235);
     font-size: 130%;
   }
-  
-  .FontNameList{
-    color: rgb(146, 129, 235);
+
+  .home{
+    background-color: #e6e6e6;
   }
-  
-  nav{
-    /* justify-content: space-around; */
+
+  .about{
+    color: #392074;
   }
-  
+
+  .horizontal{
+    border-top: 1px solid #D9A944;
+  }
+
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    /* justify-content: space-around; */
   }
   
   li {
@@ -69,5 +82,5 @@ body{
   }
   
   .footer{
-    
+    background-color: #333;
   }
