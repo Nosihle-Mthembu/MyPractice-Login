@@ -87,76 +87,84 @@ function LandingPage() {
 
   return (
     <div className="home-container">
-      <h1 className="home-title" style={{textAlign:"center"}}>To-Do List</h1>
+      <h1 className="home-title" style={{textAlign:"center",textDecoration:"underline", fontSize:50, fontWeight:"bolder"}}>To Do List</h1>
       <div style={{display:"flex", alignContent:"center", justifyContent:"space-around"}}>
         <div>
           <input
+            className="w3-border"
             type="text"
             placeholder="Add a new task"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
+            style={{borderRadius:10, border:"none", height:30, textAlign:"center"}}
           />
-          <select value={priorityLevel} onChange={(e) => setPriority(e.target.value)}>
+            
+          
+          <select className="w3-border" value={priorityLevel} onChange={(e) => setPriority(e.target.value)} style={{borderRadius:10, border:"none", height:30, textAlign:"center", margin:10}}>
             <option value="" disabled>Select Priority</option>
             <option value="High">High</option>
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
           </select>
-          <button onClick={addTask}>Add Task</button>
+          <button className="w3-btn w3-padding-small w3-round-large w3-border" onClick={addTask}>Add Task</button>
         </div>
 
         <div>
           <input
+            className="w3-border"
             type="text"
             placeholder="Search tasks"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            style={{borderRadius:10, border:"none", height:30, textAlign:"center"}}
           />
         </div>
       </div>
 
-      {filteredTasks.map((task) => (
-  <div key={task.id}>
-    {editingTaskId === task.id ? (
-      // Edit Mode
-      <div
-        className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
-        task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
-        style={{ position: "relative", marginTop: "3%", padding: "2%", width: "20%", height: "25%", borderRadius: "7%", textAlign: "center" }}>
-        <input
-          type="text"
-          value={editingTaskDescription}
-          onChange={(e) => setEditingTaskDescription(e.target.value)}
-          style={{ textAlign: "center", wordWrap: "break-word" }}
-        />
-        <select
-          value={editingTaskPriority}
-          onChange={(e) => setEditingTaskPriority(e.target.value)}
-        >
-          <option value="High">High</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option>
-        </select><br />
-        <button onClick={() => saveTask(task.id)} className="w3-button w3-green">Save</button>
-        <button onClick={() => setEditingTaskId(null)} className="w3-button w3-red">Cancel</button>
-      </div>
-    ) : (
-      // View Mode
-      <div className='card'>
-      <div
-        className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
-        task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
-        style={{position: "relative", marginTop: "3%", padding: "2%", width: "20%", height: "25%", borderRadius: "7%", textAlign: "center" }}>
-        <div style={{ textAlign: "center", wordWrap: "break-word" }}>{task.description}</div>
-        <div className="w3-container">
-          <button className="w3-button w3-green" onClick={() => startEditing(task)}>Edit</button>
-          <button className="w3-button w3-red" onClick={() => deleteTask(task.id)}>Delete</button>
+      <div>
+        {filteredTasks.map((task) => (
+        <div key={task.id}>
+          {editingTaskId === task.id ? (
+            // Edit
+            <div
+              className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
+              task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
+              style={{ position: "relative", marginTop: "3%", padding: "2%", width: "20%", height: "25%", borderRadius: "7%", textAlign: "center" }}>
+              <input
+                type="text"
+                value={editingTaskDescription}
+                onChange={(e) => setEditingTaskDescription(e.target.value)}
+                style={{ textAlign: "center", wordWrap: "break-word" }}
+              />
+              <select
+                value={editingTaskPriority}
+                onChange={(e) => setEditingTaskPriority(e.target.value)}
+              >
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select><br />
+              <button onClick={() => saveTask(task.id)} className="w3-button w3-green">Save</button>
+              <button onClick={() => setEditingTaskId(null)} className="w3-button w3-red">Cancel</button>
+            </div>
+          ) : (
+            // View
+            <div className='card'>
+              <div
+                className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
+                task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
+                style={{position: "relative",  marginTop: "3%", padding: "2%", width: "20%", height: "25%", borderRadius: "7%", textAlign: "center", display:"grid" }}>
+                <div style={{ textAlign: "center", wordWrap: "break-word" }}>{task.description}</div>
+                <div className="w3-container">
+                  <button className="w3-button w3-green" onClick={() => startEditing(task)}>Edit</button>
+                  <button className="w3-button w3-red" onClick={() => deleteTask(task.id)}>Delete</button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
+        ))}
       </div>
-      </div>
-    )}
-  </div>
-))}
     </div>
   );
 }

@@ -51,6 +51,14 @@ app.post('/tasks', (req, res) => {
   });
 });
 
+app.post('/register', (req, res) => {
+  const { username, password, name, lastname, cellphone } = req.body;
+  if (!username || !password || !name || !lastname || !cellphone) {
+    return res.status(400).json({ success: false, message: 'All fields are required' });
+  }
+  res.json({ success: true, message: 'Registration successful' });
+});
+
 app.delete('/tasks/:id', (req, res) => {
   const { id } = req.params;
   db.run('DELETE FROM tasks WHERE id = ?', id, function (err) {

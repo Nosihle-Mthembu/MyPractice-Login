@@ -3,51 +3,44 @@ import React, { useState } from 'react';
 function Login({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (username === 'user' && password === 'password') {
       onLogin(true);
     } else {
-      setError('Invalid username or password');
+      alert('Invalid credentials');
     }
   };
 
   return (
-    <div style={{ backgroundColor: "#e6e6e6", width:"100%", height:"90%", alignContent:"center"}}>
-    <div style={{
-      width: "20%",
-      boxSizing: "border-box",
-      border: "2px solid #ccc",
-      fontSize: "16px",
-      backgroundColor: "#e6e6e6",
-      backgroundPosition: "50px 50px",
-      padding: "1% 0% 2% 3%",
-      marginLeft:"40%",
-      }}>
-      <h2 style={{textDecoration:"underline"}}>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div>
-           <input
-             type="text"
-             placeholder="Username"
-             value={username}
-             onChange={(e) => setUsername(e.target.value)}
-           />
-         </div>
-         <div>
-           <input
-             type="password"
-             placeholder="Password"
-             value={password}
-             onChange={(e) => setPassword(e.target.value)}
-           />
-         </div>
-         {error && <p style={{ color: 'red' }}>{error}</p>}
-         <button type="submit">Login</button>
-       </form>
-    </div>
+    <div style={{ backgroundColor: "#e6e6e6", width: "100%", height: "90%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ width: "30%", boxSizing: "border-box", border: "2px solid #ccc", fontSize: "16px", padding: "2%", backgroundColor: "#fff", borderRadius: "5px" }}>
+        <h2 style={{ textDecoration: "underline" }}>Log In</h2>
+        <form onSubmit={handleLogin}>
+          <div style={{ marginBottom: "10px" }}>
+            <input
+              type="text"
+              placeholder="Enter your Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ccc" }}
+            />
+          </div>
+          <div style={{ marginBottom: "20px" }}>
+            <input
+              type="password"
+              placeholder="Create Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ccc" }}
+            />
+          </div>
+          <button type="submit" style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "none", backgroundColor: "#28a745", color: "#fff" }}>
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
