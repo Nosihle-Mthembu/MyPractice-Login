@@ -15,28 +15,39 @@ function Login({ onLogin }) {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div style={{ backgroundColor: "#e6e6e6", width:"100%", height:"90%", alignContent:"center"}}>
+    <div style={{
+      width: "20%",
+      boxSizing: "border-box",
+      border: "2px solid #ccc",
+      fontSize: "16px",
+      backgroundColor: "#e6e6e6",
+      backgroundPosition: "50px 50px",
+      padding: "1% 0% 2% 3%",
+      marginLeft:"40%",
+      }}>
+      <h2 style={{textDecoration:"underline"}}>Login</h2>
       <form onSubmit={handleLogin}>
         <div>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">Login</button>
-      </form>
+           <input
+             type="text"
+             placeholder="Username"
+             value={username}
+             onChange={(e) => setUsername(e.target.value)}
+           />
+         </div>
+         <div>
+           <input
+             type="password"
+             placeholder="Password"
+             value={password}
+             onChange={(e) => setPassword(e.target.value)}
+           />
+         </div>
+         {error && <p style={{ color: 'red' }}>{error}</p>}
+         <button type="submit">Login</button>
+       </form>
+    </div>
     </div>
   );
 }
