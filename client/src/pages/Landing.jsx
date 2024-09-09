@@ -86,7 +86,7 @@ function LandingPage() {
   );
 
   return (
-    <div className="home-container">
+    <div className="home-container" style={{ backgroundColor: "#7C7D78", width: "100%", display: "grid"}}>
       <h1 className="home-title" style={{textAlign:"center",textDecoration:"underline", fontSize:50, fontWeight:"bolder"}}>To Do List</h1>
       <div style={{display:"flex", alignContent:"center", justifyContent:"space-around"}}>
         <div>
@@ -116,7 +116,7 @@ function LandingPage() {
             placeholder="Search tasks"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            style={{borderRadius:10, border:"none", height:30, textAlign:"center"}}
+            style={{borderRadius:10, border:"none", height:30, textAlign:"center", marginTop:10}}
           />
         </div>
       </div>
@@ -153,7 +153,7 @@ function LandingPage() {
               <div
                 className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
                 task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
-                style={{position: "relative",  marginTop: "3%", padding: "2%", width: "20%", height: "25%", borderRadius: "7%", textAlign: "center", display:"grid" }}>
+                style={{position: "relative",  marginTop: "3%", padding: "2%", width: "20%", height: "25%", borderRadius: "7%", textAlign: "center"}}>
                 <div style={{ textAlign: "center", wordWrap: "break-word" }}>{task.description}</div>
                 <div className="w3-container">
                   <button className="w3-button w3-green" onClick={() => startEditing(task)}>Edit</button>

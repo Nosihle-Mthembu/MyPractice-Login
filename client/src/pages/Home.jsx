@@ -14,7 +14,7 @@ function Home() {
       if (myIndex >= x.length) { myIndex = 0 }    
       x[myIndex].style.display = "block";  
       myIndex++;
-      setTimeout(carousel, 5000); // Change image every 2 seconds
+      setTimeout(carousel, 5000);
     }
     carousel()
   }, []);
