@@ -86,7 +86,7 @@ function LandingPage() {
   );
 
   return (
-    <div className="home-container" style={{backgroundColor: "#7C7D78", width: "100%", display: "grid"}}>
+    <div className="home-container" style={{backgroundColor: "#7C7D78", width: "100%",height:"100%", display: "grid"}}>
       <h1 className="home-title" style={{textAlign:"center",textDecoration:"underline", fontSize:50, fontWeight:"bolder"}}>To Do List</h1>
       <div style={{display:"flex", alignContent:"center", justifyContent:"space-around"}}>
         <div>
@@ -122,7 +122,7 @@ function LandingPage() {
       </div>
 
       <div>
-        <div style={{display: "grid", gridTemplateColumns: "auto auto auto"}}>
+        <div style={{display: "grid", gridTemplateColumns: "auto auto auto", marginLeft:150}}>
           {filteredTasks.map((task) => (
           <div key={task.id}>
             {editingTaskId === task.id ? (
@@ -130,7 +130,7 @@ function LandingPage() {
               <div
                 className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
                 task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
-                style={{ position: "relative", marginTop: "3%", padding: "2%", width: "100%", height: "25%", borderRadius: "7%", textAlign: "center" }}>
+                style={{ position: "relative", marginTop: "3%", padding: "2%", width: "70%", height: "90%", borderRadius: "7%", textAlign: "center" }}>
                 <input
                   type="text"
                   value={editingTaskDescription}
