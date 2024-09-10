@@ -51,7 +51,7 @@ function Register() {
   };
 
   return (
-    <div style={{ backgroundColor: "#e6e6e6", width: "100%", height: "90%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+    <div style={{ backgroundColor: "#e6e6e6", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
       <div style={{ width: "30%", boxSizing: "border-box", border: "2px solid #ccc", fontSize: "16px", padding: "2%", backgroundColor: "#fff", borderRadius: "5px" }}>
         <h2 style={{ textDecoration: "underline" }}>Register</h2>
         <form onSubmit={handleRegister}>
