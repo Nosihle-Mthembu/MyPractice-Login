@@ -16,64 +16,15 @@
     margin: 0
   }
 
-  
   .HomeFontColor{
-    font-size: 130%;
-    -webkit-text-stroke: 1px white;
     color: transparent;
   }
-  
+
   .HomeFontColor:hover{
     color: white;
   }
 
-  .AboutFontColor{
-    color: rgb(146, 129, 235);
-    font-size: 130%;
-  }
-
-  .home{
-    background-color: #e6e6e6;
-  }
-
-  .about{
-    color: #392074;
-  }
-
-  .horizontal{
-    border-top: 1px solid #D9A944;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: right;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
+  li:hover:not(.active) {
     background-color: #111;
     border-radius: 30%;
-  }
-  
-  
-  Link{
-    color:rgb(61, 37, 121);
-  }
-  
-  .footer{
-    background-color: #333;
   }

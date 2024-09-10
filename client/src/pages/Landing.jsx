@@ -86,7 +86,7 @@ function LandingPage() {
   );
 
   return (
-    <div className="home-container" style={{ backgroundColor: "#7C7D78", width: "100%", display: "grid"}}>
+    <div className="home-container" style={{backgroundColor: "#7C7D78", width: "100%", display: "grid"}}>
       <h1 className="home-title" style={{textAlign:"center",textDecoration:"underline", fontSize:50, fontWeight:"bolder"}}>To Do List</h1>
       <div style={{display:"flex", alignContent:"center", justifyContent:"space-around"}}>
         <div>
@@ -122,48 +122,52 @@ function LandingPage() {
       </div>
 
       <div>
-        {filteredTasks.map((task) => (
-        <div key={task.id}>
-          {editingTaskId === task.id ? (
-            // Edit
-            <div
-              className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
-              task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
-              style={{ position: "relative", marginTop: "3%", padding: "2%", width: "20%", height: "25%", borderRadius: "7%", textAlign: "center" }}>
-              <input
-                type="text"
-                value={editingTaskDescription}
-                onChange={(e) => setEditingTaskDescription(e.target.value)}
-                style={{ textAlign: "center", wordWrap: "break-word" }}
-              />
-              <select
-                value={editingTaskPriority}
-                onChange={(e) => setEditingTaskPriority(e.target.value)}
-              >
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
-              </select><br />
-              <button onClick={() => saveTask(task.id)} className="w3-button w3-green">Save</button>
-              <button onClick={() => setEditingTaskId(null)} className="w3-button w3-red">Cancel</button>
-            </div>
-          ) : (
-            // View
-            <div className='card'>
+        <div style={{display: "grid", gridTemplateColumns: "auto auto auto"}}>
+          {filteredTasks.map((task) => (
+          <div key={task.id}>
+            {editingTaskId === task.id ? (
+              // Edit
               <div
                 className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
                 task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
-                style={{position: "relative",  marginTop: "3%", padding: "2%", width: "20%", height: "25%", borderRadius: "7%", textAlign: "center"}}>
-                <div style={{ textAlign: "center", wordWrap: "break-word" }}>{task.description}</div>
-                <div className="w3-container">
-                  <button className="w3-button w3-green" onClick={() => startEditing(task)}>Edit</button>
-                  <button className="w3-button w3-red" onClick={() => deleteTask(task.id)}>Delete</button>
+                style={{ position: "relative", marginTop: "3%", padding: "2%", width: "100%", height: "25%", borderRadius: "7%", textAlign: "center" }}>
+                <input
+                  type="text"
+                  value={editingTaskDescription}
+                  onChange={(e) => setEditingTaskDescription(e.target.value)}
+                  style={{ textAlign: "center", wordWrap: "break-word" }}
+                />
+                <select
+                  value={editingTaskPriority}
+                  onChange={(e) => setEditingTaskPriority(e.target.value)}
+                >
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
+                </select><br />
+                <button onClick={() => saveTask(task.id)} className="w3-button w3-green">Save</button>
+                <button onClick={() => setEditingTaskId(null)} className="w3-button w3-red">Cancel</button>
+              </div>
+            ) : (
+              // View
+
+              <div className='card' style={{display:"flex", alignContent:"center", justifyContent:"center", width:350, height:200, gap:10}}>
+                <div
+                  className={`w3-card-4 ${task.priority === 'High' ? 'w3-pale-red w3-leftbar w3-border-red' : 
+                  task.priority === 'Medium' ? 'w3-amber w3-leftbar w3-border-orange' : 'w3-pale-green w3-leftbar w3-border-green'}`} 
+                  style={{position: "relative",  marginTop: "3%", padding: "2%", width: "80%", marginBottom:15, borderRadius: "7%", textAlign: "center"}}>
+                  <div style={{ textAlign: "center", wordWrap: "break-word" }}>{task.description}</div>
+                  <div className="w3-container">
+                    <button className="w3-button w3-green" onClick={() => startEditing(task)}>Edit</button>
+                    <button className="w3-button w3-red" onClick={() => deleteTask(task.id)}>Delete</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            
+            )}
+          </div>
+          ))}
         </div>
-        ))}
       </div>
     </div>
   );

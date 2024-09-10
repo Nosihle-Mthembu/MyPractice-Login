@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState('');
@@ -6,7 +7,7 @@ function Login({ onLogin }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === 'user' && password === 'password') {
+    if (username === username && password === password) {
       onLogin(true);
     } else {
       alert('Invalid credentials');
@@ -36,6 +37,10 @@ function Login({ onLogin }) {
               style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ccc" }}
             />
           </div>
+          <p>
+            Don't have an account? 
+            <Link to="/registration" style={{ fontSize: "95%" }}> Sign Up</Link>.
+          </p>
           <button type="submit" style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "none", backgroundColor: "#28a745", color: "#fff" }}>
             Submit
           </button>
