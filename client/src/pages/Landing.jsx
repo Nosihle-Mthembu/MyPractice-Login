@@ -106,7 +106,7 @@ function LandingPage() {
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
           </select>
-          <button className="w3-btn w3-padding-small w3-round-large w3-border" onClick={addTask}>Add Task</button>
+          <button className="w3-btn w3-padding-small w3-round-large w3-border" style={{color:"white"}} onClick={addTask}>Add Task</button>
         </div>
 
         <div>
@@ -122,7 +122,7 @@ function LandingPage() {
       </div>
 
       <div>
-        <div style={{display: "grid", gridTemplateColumns: "auto auto auto", marginLeft:150}}>
+        <div style={{display: "grid", gridTemplateColumns: "auto auto auto", marginLeft:150, overflow:"auto", height:500}}>
           {filteredTasks.map((task) => (
           <div key={task.id}>
             {editingTaskId === task.id ? (
